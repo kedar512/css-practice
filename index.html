@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <div class="backdrop"></div>
     <header class="main-header">
         <div>
             <a href="index.html" class="main-header__brand">
@@ -291,7 +292,6 @@
 </body>
 
 <script>
-
     const numInput = document.getElementById("num");
     const pattern = /^[+-]?(\d+(\.\d+)?)$/;
 
@@ -301,7 +301,7 @@
 
         if (pattern.test(numValue)) {
             const numInt = Number(numValue);
-            
+
             console.log(numInt);
             /* if (numInt >= 0) {
                 numInput.value = numInt;
