@@ -14,9 +14,21 @@
 </head>
 
 <body>
-    <div class="backdrop"></div>
+    <div onclick="hideModal(event);" class="backdrop"></div>
+    <div class="modal">
+        <h1 class="modal__title">Do you want to continue?</h1>
+        <div class="modal__actions">
+            <a href="start-hosting/index.html" class="modal__action">Yes!</a>
+            <button onclick="hideModal(event);" class="modal__action modal__action--negative" type="button">No!</button>
+        </div>
+    </div>
     <header class="main-header">
         <div>
+            <button class="toggle-button">
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span>
+            </button>
             <a href="index.html" class="main-header__brand">
                 <img src="images/uhost-icon.png" alt="uHost - Your favorite hosting service">
             </a>
@@ -35,11 +47,26 @@
             </ul>
         </nav>
     </header>
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__items">
+            <li class="mobile-nav__item">
+                <a href="packages/index.html">Packages</a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="customers/index.html">Customers</a>
+            </li>
+            <li class="mobile-nav__item mobile-nav__item--cta">
+                <a href="start-hosting/index.html">Start Hosting</a>
+            </li>
+        </ul>
+    </nav>
     <main>
-        <!-- <input id="num" type="text" /> -->
         <section id="product-overview">
             <h1>Get the freedom you deserve.</h1>
         </section>
+        <!-- <div class="input-test">
+            <input id="num" style="margin-top: 10px;" type="text" />
+        </div> -->
         <section id="plans">
             <h1 class="section-title">Choose your plan</h1>
             <div class="plan-list">
@@ -289,28 +316,30 @@
             </ul>
         </nav>
     </footer>
+    <script src="shared.js"></script>
 </body>
 
 <script>
     const numInput = document.getElementById("num");
     const pattern = /^[+-]?(\d+(\.\d+)?)$/;
+    const alphanumaricPattern = /^[\w#$]+$/;
 
     const updateTextInput = (e) => {
         const numValue = e.target.value;
-        console.log(numValue);
 
-        if (pattern.test(numValue)) {
+        if (alphanumaricPattern.test(numValue)) {
+            console.log("Valid input");
+        } else {
+            console.log("Invalid input");
+        }
+
+        /* if (pattern.test(numValue)) {
             const numInt = Number(numValue);
 
             console.log(numInt);
-            /* if (numInt >= 0) {
-                numInput.value = numInt;
-            } else {
-                numInput.value = 1000;
-            } */
         } else {
             console.log('Not a number');
-        }
+        } */
     }
 
     //numInput.addEventListener('input', updateTextInput);
