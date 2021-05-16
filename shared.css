@@ -11,6 +11,11 @@ body::-webkit-scrollbar {
     width: 0
 }
 
+main {
+    min-height: calc(100vh - 3.5rem - 8rem);
+    margin-top: 3.5rem;
+}
+
 .input-test {
     margin: auto;
     text-align: center;
@@ -58,8 +63,7 @@ body::-webkit-scrollbar {
     color: #0e4f1f;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.5rem;
-    height: 1.5rem;
+    height: 2.5rem;
     /* width: 20px; */
     display: inline-block;
     vertical-align: middle;
@@ -93,7 +97,7 @@ body::-webkit-scrollbar {
 }
 
 .main-nav {
-    display: inline-block;
+    display: none;
     text-align: right;
     width: calc(100% - 122px);
     vertical-align: middle;
@@ -141,6 +145,24 @@ body::-webkit-scrollbar {
     border: none;
 }
 
+@media (min-width: 40rem) {
+    .main-nav {
+        display: inline-block;
+    }
+    .mobile-nav {
+        display: none;
+    }
+    .toggle-button {
+        display: none;
+    }
+    .main-header__brand {
+        height: 2.5rem;
+    }
+    .main-nav {
+        width: calc(100% - 44px);
+    }
+}
+
 .mobile-nav {
     display: none;
     position: fixed;
@@ -183,8 +205,7 @@ body::-webkit-scrollbar {
 }
 
 .main-footer li {
-    display: inline-block;
-    margin: 0 1rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .main-footer a {
@@ -195,6 +216,13 @@ body::-webkit-scrollbar {
 .main-footer a:hover,
 .main-footer a:active {
     color: #ccc;
+}
+
+@media (min-width: 40rem) {
+    .main-footer li {
+        display: inline-block;
+        margin: 0 1rem 0 1rem;
+    }
 }
 
 .button {
