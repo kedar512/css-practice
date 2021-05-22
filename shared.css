@@ -246,6 +246,13 @@ main {
     outline: none;
 }
 
+.button[disabled] {
+    cursor: not-allowed;
+    background: rgb(184, 181, 181);
+    color: rgb(124, 121, 121);
+    border-color: #ccc;
+}
+
 .open {
     display: block !important;
 }
