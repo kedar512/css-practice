@@ -86,6 +86,7 @@ main {
     color: #014f1f;
     border: 1px solid #0e4f1f;
     padding: 1rem;
+    font-family: "Roboto", sans-serif;
 }
 
 @media (min-width: 40rem) {
