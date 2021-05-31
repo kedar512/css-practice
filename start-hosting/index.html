@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="backdrop"></div>
+    <div onclick="hideModal(event);" class="backdrop"></div>
     <header class="main-header">
         <div>
             <button class="toggle-button">
@@ -67,11 +67,15 @@
             <input onchange="validateInput(event)" onfocus="handleOnFocus(event)" type="email" id="email">
             <label for="password">Password</label>
             <input onchange="validateInput(event)" onfocus="handleOnFocus(event)" type="password" id="password">
-            <input type="checkbox" id="agree-terms">
-            <label for="agree-terms">Agree to
-                <a href="#">Terms &amp; Conditions</a>
-            </label>
-            <button id="submit-button" type="submit" class="button" disabled>Sign Up</button>
+            <div class="signup-form__checkbox">
+                <input type="checkbox" id="agree-terms">
+                <label for="agree-terms">Agree to
+                    <a href="#">Terms &amp; Conditions</a>
+                </label>
+            </div>
+            <div class="submit-button">
+                <button id="submit-button" type="submit" class="button" disabled>Sign Up</button>
+            </div>
         </form>
     </main>
     <footer class="main-footer">

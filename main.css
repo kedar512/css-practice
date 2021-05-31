@@ -82,11 +82,12 @@
     }
 }
 
-@media (min-width: 40rem) {
+
+/* @media (min-width: 40rem) {
     #product-overview {
         margin-top: 3.5rem;
     }
-}
+} */
 
 .section-title {
     color: #2ddf5c;

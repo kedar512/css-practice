@@ -5,9 +5,17 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 3.5rem auto fit-content(8rem);
+    grid-template-areas: "." "main" "footer";
 }
 
 body::-webkit-scrollbar {
@@ -15,8 +23,7 @@ body::-webkit-scrollbar {
 }
 
 main {
-    min-height: calc(100vh - 3.5rem - 8rem);
-    margin-top: 3.5rem;
+    grid-area: main;
 }
 
 .input-test {
@@ -53,7 +60,7 @@ main {
     top: 0;
     left: 0;
     background: #2ddf5c;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     z-index: 3;
     display: flex;
     flex-flow: row wrap;
@@ -155,6 +162,9 @@ main {
     .main-header__brand {
         height: 2.5rem;
     }
+    .main-header {
+        padding: 0.5rem 1rem;
+    }
 }
 
 .mobile-nav {
@@ -192,6 +202,7 @@ main {
     background: black;
     padding: 2rem;
     margin-top: 3rem;
+    grid-area: footer;
 }
 
 .main-footer ul {
