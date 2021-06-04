@@ -53,6 +53,10 @@ main {
     padding: 2rem;
 }
 
+.packages--link:hover {
+    animation: bump-content 500ms ease-out forwards;
+}
+
 .packages__title {
     color: black;
 }
@@ -107,5 +111,17 @@ main {
     }
     .packages {
         border-left: 4px solid #0e4f1f;
+    }
+}
+
+@keyframes bump-content {
+    0% {
+        transform: translateY(0rem);
+    }
+    33% {
+        transform: translateY(-1.5rem);
+    }
+    100% {
+        transform: translateY(-1rem);
     }
 }

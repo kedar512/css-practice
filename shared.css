@@ -46,12 +46,14 @@ main {
 .backdrop {
     position: fixed;
     display: none;
+    opacity: 0;
     top: 0;
     left: 0;
     z-index: 100;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    transition: opacity 500ms linear;
 }
 
 .main-header {
@@ -140,6 +142,10 @@ main {
     border-radius: 8px;
 }
 
+.main-nav__item--cta {
+    animation: wiggle 400ms 3s 8 ease-out none;
+}
+
 .main-nav__item--cta a:hover,
 .main-nav__item--cta a:active,
 .mobile-nav__item--cta a:hover,
@@ -168,7 +174,8 @@ main {
 }
 
 .mobile-nav {
-    display: none;
+    transform: translateX(-100%);
+    transition: transform 500ms linear;
     position: fixed;
     z-index: 101;
     top: 0;
@@ -268,4 +275,18 @@ main {
 
 .open {
     display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0rem) translateX(0rem) !important;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(10deg);
+    }
 }
